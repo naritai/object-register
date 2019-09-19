@@ -1,8 +1,6 @@
-.App {
-	width: 100wv;
-	height: 100vh;
-	border: 2px solid lightgray;
+.container {
+	display: flex;
+	flex-direction: column;
 	overflow: scroll;
 	margin: 1em;
-	padding: 1em;
 }

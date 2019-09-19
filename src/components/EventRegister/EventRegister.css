@@ -1,5 +1,8 @@
 .event-register {
-	border: 2px solid lightgreen;
-	width: 25%;
-	height: 604px;
+	height: 585px;
+	margin-left: 1em;
+	padding: 0.5em;
+	flex-grow: 1;
+	overflow: scroll;
+	border: 2px solid gray;
 }
