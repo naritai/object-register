@@ -1,0 +1,8 @@
+.App {
+	width: 100wv;
+	height: 100vh;
+	border: 2px solid lightgray;
+	overflow: scroll;
+	margin: 1em;
+	padding: 1em;
+}

@@ -1,0 +1,40 @@
+{
+	"extends": [
+		"tslint-plugin-prettier",
+		"tslint-config-prettier",
+		"tslint-no-circular-imports"
+	],
+	"rules": {
+		"array-type": false,
+		"arrow-parens": true,
+		"await-promise": true,
+		"binary-expression-operand-order": true,
+		"class-name": true,
+		"curly": true,
+		"deprecation": true,
+		"prefer-template": true,
+		"no-default-export": true,
+		"no-require-imports": true,
+		"no-trailing-whitespace": true,
+		"no-unused-expression": true,
+		"no-unnecessary-callback-wrapper": true,
+		"promise-function-async": true,
+		"semicolon": true,
+		"prefer-object-spread": true,
+		"prefer-const": true,
+		"ordered-imports": true,
+		"object-literal-shorthand": true,
+		"no-var-keyword": true,
+		"no-unnecessary-type-assertion": true,
+		"no-unnecessary-initializer": true,
+		"whitespace": [
+			true,
+			"check-decl",
+			"check-operator",
+			"check-module",
+			"check-separator",
+			"check-type-operator"
+		],
+		"prettier": true
+	}
+}

@@ -1,0 +1,6 @@
+{
+	"useTabs": true,
+	"semicolons": true,
+	"arrowParens": "always",
+	"printWidth": 80
+}

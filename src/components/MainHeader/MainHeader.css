@@ -1,0 +1,15 @@
+.main-header {
+	display: flex;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	margin-right: 2em;
+}
+
+.custom-btn {
+	margin-right: 1em;
+	width: 100px;
+}
