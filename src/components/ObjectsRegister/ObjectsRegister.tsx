@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from "react";
+import { createRandomAnimatedRect } from "../../lib/svg";
 import Canvas from "../Canvas";
-import ObjectsThread from "../ObjectsThread";
+import { svgFieldId } from "../Canvas/Canvas";
 import VideoElement from "../VideoElement";
 import "./ObjectsRegister.css";
 
 export const ObjectRegister = () => {
 	const [showObjects, setShowObjects] = useState(false);
+	const [timer, setTimer] = useState<any>(null);
 
 	useEffect(() => {
-		const canvas = document.getElementById("canvas");
-		setInterval(() => appendObjectToCanvas(canvas), 1500);
-	}, []);
+		if (showObjects) {
+			const timerId = setInterval(appendRandomRect, 1000);
+			setTimer(timerId);
+		}
+
+		return clearInterval(timer);
+	}, [showObjects]);
 
 	const startObserveObjects = (e: React.UIEvent<any>) => {
 		setShowObjects(true);
@@ -31,29 +37,12 @@ export const ObjectRegister = () => {
 	);
 };
 
-const appendObjectToCanvas = (canvas: any) => {
-	const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-	const animate = document.createElementNS(
-		"http://www.w3.org/2000/svg",
-		"animate"
-	);
+const appendRandomRect = () => {
+	const svgField: any = document.getElementById(svgFieldId);
+	const animatedRect = createRandomAnimatedRect();
 
-	// rect.setAttributeNS(null, "x", `${-Math.random() * 100}`);
-	// rect.setAttributeNS(null, "y", `${-Math.random() * 100}`);
-	rect.setAttributeNS(null, "width", String(80));
-	rect.setAttributeNS(null, "height", String(120));
-	rect.setAttributeNS(null, "fill", "none");
-	rect.setAttributeNS(null, "stroke", "orange");
-	rect.setAttributeNS(null, "stroke-width", "3");
-	rect.setAttributeNS(null, "id", `${Math.random() * 1003131}`);
+	console.log(svgField);
+	console.log(animatedRect);
 
-	animate.setAttributeNS(null, "attributeType", "XML");
-	animate.setAttributeNS(null, "attributeName", "x");
-	animate.setAttributeNS(null, "from", `${-Math.random() * 100}`);
-	animate.setAttributeNS(null, "to", "900");
-	animate.setAttributeNS(null, "dur", "4s");
-	animate.setAttributeNS(null, "drepeatCountur", "1");
-
-	rect.appendChild(animate);
-	canvas.appendChild(rect);
+	svgField.appendChild(animatedRect);
 };
