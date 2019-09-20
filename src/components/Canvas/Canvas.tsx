@@ -16,8 +16,11 @@ export const Canvas = () => {
 	useEffect(() => {
 		const wrapper: any = document.getElementById("canvas-wrapper");
 		if (canvas) {
-			console.log(canvas);
-			wrapper.appendChild(canvas);
+			try {
+				wrapper.appendChild(canvas);
+			} catch (err) {
+				console.error(err.message);
+			}
 		}
 	}, [canvas]);
 

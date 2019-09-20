@@ -4,7 +4,7 @@
 	padding: 0.5em;
 	flex-grow: 1;
 	overflow: scroll;
-	border: 2px solid gray;
+	/* border: 2px solid gray; */
 }
 
 .event-list-item {
@@ -13,4 +13,9 @@
 	margin: 0.5em;
 	border: 1px solid lightcoral;
 	padding: 0.4em;
+}
+
+.primary-item-list {
+	width: 100%;
+	margin-bottom: 1em;
 }

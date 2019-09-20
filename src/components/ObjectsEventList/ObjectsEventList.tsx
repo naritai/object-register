@@ -1,3 +1,4 @@
+import { ListItem, ListItemText, Paper } from "@material-ui/core";
 import { useStore } from "effector-react";
 import React from "react";
 import { EventListItem } from "./EventListItem";
@@ -9,7 +10,11 @@ export const ObjectsEventList = () => {
 	const showEvents = events.length > 0;
 
 	return (
-		<div className="event-register">
+		<Paper square elevation={6} className="event-register">
+			<ListItem divider className="primary-item-list">
+				<ListItemText primary="Event list" />
+			</ListItem>
+
 			{showEvents ? (
 				<div>
 					{events.map((event) => {
@@ -19,6 +24,6 @@ export const ObjectsEventList = () => {
 			) : (
 				<span> here will be some events </span>
 			)}
-		</div>
+		</Paper>
 	);
 };
