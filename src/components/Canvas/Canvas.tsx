@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import { useSVGField } from "../../lib/svg";
-import "./Canvas.css";
+import { appendEvent } from "../ObjectsEventList/model";
 import { canvasHeight, canvasWidth, svgFieldId } from "./params";
+
+import "./Canvas.css";
 
 export const Canvas = () => {
 	const canvas = useSVGField({
@@ -14,12 +16,24 @@ export const Canvas = () => {
 	useEffect(() => {
 		const wrapper: any = document.getElementById("canvas-wrapper");
 		if (canvas) {
+			console.log(canvas);
 			wrapper.appendChild(canvas);
 		}
 	}, [canvas]);
 
 	const handleClick = (e: any) => {
-		console.log(e.target.getBoundingClientRect());
+		const { left, right, top, bottom } = e.target.getBoundingClientRect();
+		const type = e.target.classList.value;
+
+		const coords = {
+			left: parseInt(left),
+			right: parseInt(right),
+			top: parseInt(top),
+			bottom: parseInt(bottom),
+			type
+		};
+
+		appendEvent(coords);
 	};
 
 	return (

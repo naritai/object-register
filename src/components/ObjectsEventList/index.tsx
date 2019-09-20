@@ -1,3 +1,3 @@
-import { ObjectsEventList } from "./EventRegister";
+import { ObjectsEventList } from "./ObjectsEventList";
 
 export default ObjectsEventList;

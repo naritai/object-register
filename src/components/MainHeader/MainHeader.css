@@ -1,3 +1,16 @@
 .main-header {
 	z-index: 5;
 }
+
+.btn {
+	width: 180px;
+	height: 45px;
+	margin-left: auto;
+	cursor: pointer;
+	outline: none;
+	background-color: #f64747;
+	border-radius: 10px;
+	color: whitesmoke;
+	font-size: 1.1em;
+	text-transform: uppercase;
+}

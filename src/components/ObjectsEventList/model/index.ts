@@ -1,3 +1,7 @@
-import { createStore } from "effector";
+import { createEvent, createStore } from "effector";
 
-const $eventList = createStore<any[]>([]);
+export const appendEvent = createEvent<any>();
+export const clearEvents = createEvent<void>();
+export const $eventList = createStore<any[]>([])
+	.on(appendEvent, (state, value) => [...state, value])
+	.reset(clearEvents);
