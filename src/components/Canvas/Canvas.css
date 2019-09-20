@@ -11,7 +11,7 @@
 
 .animated-object-human {
 	animation-name: object-human;
-	animation-duration: 2s;
+	animation-duration: 5s;
 	animation-timing-function: linear;
 	animation-iteration-count: 1;
 }
@@ -22,5 +22,23 @@
 	}
 	to {
 		x: 100%;
+	}
+}
+
+.animated-object-car {
+	animation-name: object-car;
+	animation-duration: 5s;
+	animation-timing-function: linear;
+	animation-iteration-count: 1;
+}
+
+@keyframes object-car {
+	from {
+		x: -100px;
+		y: 100px;
+	}
+	to {
+		x: 100%;
+		y: 600px;
 	}
 }

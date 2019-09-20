@@ -39,11 +39,10 @@ export const ObjectRegister = () => {
 
 const appendRandomRect = () => {
 	const svgField: any = document.getElementById(svgFieldId);
-	const { rect, randomId } = createRandomAnimatedRect();
+	const { rect } = createRandomAnimatedRect();
 	svgField.appendChild(rect);
 
 	setTimeout(() => {
-		const elem = document.getElementById(randomId);
 		svgField.removeChild(rect);
-	}, 2000);
+	}, 4700);
 };
