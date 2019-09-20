@@ -25,6 +25,12 @@ export const Canvas = () => {
 	}, [canvas]);
 
 	const handleClick = (e: any) => {
+		const id = e.target.getAttribute("id");
+		if (id === svgFieldId || id === "canvas-wrapper") {
+			e.stopPropagation();
+			return;
+		}
+
 		const { left, right, top, bottom } = e.target.getBoundingClientRect();
 		const type = e.target.classList.value;
 
