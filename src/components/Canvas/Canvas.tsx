@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
 import { useSVGField } from "../../lib/svg";
 import "./Canvas.css";
-
-export const svgFieldId = "super-canvas";
+import { canvasHeight, canvasWidth, svgFieldId } from "./params";
 
 export const Canvas = () => {
 	const canvas = useSVGField({
-		width: "892",
-		height: "520",
+		width: String(canvasWidth),
+		height: String(canvasHeight),
 		fill: "none",
 		id: svgFieldId
 	});
@@ -22,8 +21,6 @@ export const Canvas = () => {
 	const handleClick = (e: any) => {
 		console.log(e.target.getBoundingClientRect());
 	};
-
-	console.log("CANVAS COMPONENT UPDATED!!!");
 
 	return (
 		<div

@@ -1,4 +1,5 @@
 import React from "react";
+import { height, width } from "./params";
 import "./VideoElement.css";
 
 type Props = {
@@ -14,8 +15,8 @@ export const VideoElement = ({ showObjects, hideObjects }: Props) => {
 				onPause={hideObjects}
 				preload="true"
 				controls
-				width="900"
-				height="600"
+				width={width}
+				height={height}
 				loop
 				muted
 				className="video"

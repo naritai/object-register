@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { createRandomAnimatedRect } from "../../lib/svg";
 import Canvas from "../Canvas";
-import { svgFieldId } from "../Canvas/Canvas";
+import { svgFieldId } from "../Canvas/params";
 import VideoElement from "../VideoElement";
 import "./ObjectsRegister.css";
 

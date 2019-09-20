@@ -1,7 +1,6 @@
 .main-content {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
-	padding: 2em;
+	/* align-items: center; */
 	margin-top: 5em;
 }
