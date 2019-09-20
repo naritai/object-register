@@ -4,6 +4,7 @@ import Canvas from "../Canvas";
 import { svgFieldId } from "../Canvas/params";
 import VideoElement from "../VideoElement";
 import { videoHeight, videoWidth } from "../VideoElement/params";
+import { incrementObject } from "./model";
 
 import "./ObjectsRegister.css";
 
@@ -47,6 +48,7 @@ const appendRandomRect = () => {
 	});
 
 	svgField.appendChild(rect);
+	incrementObject(1);
 
 	setTimeout(() => {
 		svgField.removeChild(rect);

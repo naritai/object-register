@@ -1,6 +1,7 @@
 import { AppBar, Toolbar, Typography } from "@material-ui/core";
 import React from "react";
 import { clearEvents } from "../ObjectsEventList/model";
+import { resetObjectCounter } from "../ObjectsRegister/model";
 import "./MainHeader.css";
 
 export const MainHeader = () => {
@@ -21,4 +22,5 @@ export const MainHeader = () => {
 
 const handleClearEvents = (e: any) => {
 	clearEvents();
+	resetObjectCounter();
 };
