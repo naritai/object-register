@@ -18,14 +18,24 @@ const colors: string[] = [
 	"#1F3A93"
 ];
 
-export const createRandomAnimatedRect = () => {
+type RandomAnimatedRectProps = {
+	width: number;
+	height: number;
+};
+
+export const createRandomAnimatedRect = (options: RandomAnimatedRectProps) => {
 	const randomObject = randomInteger(1, 10);
 	const randomId: string = Math.random() * 324327 + "sadfasdf";
 	const object = randomObject > 5 ? "human" : "car";
 
+	const { width, height } = options;
+	const divider = object === "human" ? 7 : 5;
+	const reactWidth = String(width / divider);
+	const reactHeight = String(height / divider);
+
 	const rect = createRect({
-		width: object === "human" ? "60" : "160",
-		height: object === "human" ? "100" : "80",
+		width: reactWidth,
+		height: reactHeight,
 		stroke: colors[randomObject],
 		strokeWidth: "3",
 		left: object === "human" ? "100" : "300",

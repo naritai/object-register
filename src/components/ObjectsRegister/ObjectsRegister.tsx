@@ -3,6 +3,8 @@ import { createRandomAnimatedRect } from "../../lib/svg";
 import Canvas from "../Canvas";
 import { svgFieldId } from "../Canvas/params";
 import VideoElement from "../VideoElement";
+import { videoHeight, videoWidth } from "../VideoElement/params";
+
 import "./ObjectsRegister.css";
 
 export const ObjectRegister = () => {
@@ -39,7 +41,11 @@ export const ObjectRegister = () => {
 
 const appendRandomRect = () => {
 	const svgField: any = document.getElementById(svgFieldId);
-	const { rect } = createRandomAnimatedRect();
+	const { rect } = createRandomAnimatedRect({
+		height: videoHeight,
+		width: videoWidth
+	});
+
 	svgField.appendChild(rect);
 
 	setTimeout(() => {

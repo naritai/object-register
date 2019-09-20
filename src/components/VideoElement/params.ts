@@ -1,2 +1,2 @@
-export const width = 1000;
-export const height = 700;
+export const videoWidth = 1000;
+export const videoHeight = 700;
