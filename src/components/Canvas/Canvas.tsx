@@ -37,6 +37,7 @@ export const Canvas = () => {
 		};
 
 		appendEvent(coords);
+		updateEventListScroll();
 	};
 
 	return (
@@ -46,4 +47,9 @@ export const Canvas = () => {
 			onClick={handleClick}
 		></div>
 	);
+};
+
+const updateEventListScroll = () => {
+	const element: any = document.getElementById("object-events-element");
+	element.scrollTop = 9999;
 };

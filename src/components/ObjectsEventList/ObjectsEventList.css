@@ -3,8 +3,6 @@
 	margin-left: 1em;
 	padding: 0.5em;
 	flex-grow: 1;
-	overflow: scroll;
-	/* border: 2px solid gray; */
 }
 
 .event-list-item {
@@ -18,4 +16,10 @@
 .primary-item-list {
 	width: 100%;
 	margin-bottom: 1em;
+}
+
+#object-events-element {
+	overflow: scroll;
+	height: 100%;
+	width: 100%;
 }

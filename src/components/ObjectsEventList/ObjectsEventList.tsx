@@ -15,15 +15,17 @@ export const ObjectsEventList = () => {
 				<ListItemText primary="Event list" />
 			</ListItem>
 
-			{showEvents ? (
-				<div>
-					{events.map((event) => {
-						return <EventListItem key={event.id} event={event} />;
-					})}
-				</div>
-			) : (
-				<span> here will be some events </span>
-			)}
+			<div id="object-events-element">
+				{showEvents ? (
+					<div>
+						{events.map((event) => {
+							return <EventListItem key={event.id} event={event} />;
+						})}
+					</div>
+				) : (
+					<span> here will be some events </span>
+				)}
+			</div>
 		</Paper>
 	);
 };
