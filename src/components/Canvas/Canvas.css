@@ -8,3 +8,19 @@
 .enable-events {
 	pointer-events: all;
 }
+
+.animated-object-human {
+	animation-name: object-human;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-iteration-count: 1;
+}
+
+@keyframes object-human {
+	from {
+		x: -100px;
+	}
+	to {
+		x: 100%;
+	}
+}

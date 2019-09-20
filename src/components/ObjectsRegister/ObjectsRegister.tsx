@@ -11,7 +11,7 @@ export const ObjectRegister = () => {
 
 	useEffect(() => {
 		if (showObjects) {
-			const timerId = setInterval(appendRandomRect, 1000);
+			const timerId = setInterval(appendRandomRect, 1500);
 			setTimer(timerId);
 		}
 
@@ -39,10 +39,11 @@ export const ObjectRegister = () => {
 
 const appendRandomRect = () => {
 	const svgField: any = document.getElementById(svgFieldId);
-	const animatedRect = createRandomAnimatedRect();
+	const { rect, randomId } = createRandomAnimatedRect();
+	svgField.appendChild(rect);
 
-	console.log(svgField);
-	console.log(animatedRect);
-
-	svgField.appendChild(animatedRect);
+	setTimeout(() => {
+		const elem = document.getElementById(randomId);
+		svgField.removeChild(rect);
+	}, 2000);
 };
