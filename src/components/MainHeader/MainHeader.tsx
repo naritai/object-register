@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Typography } from "@material-ui/core";
+import { AppBar, Button, Toolbar, Typography } from "@material-ui/core";
 import React from "react";
 import { clearEvents } from "../ObjectsEventList/model";
 import { resetObjectCounter } from "../ObjectsRegister/model";
@@ -7,14 +7,18 @@ import "./MainHeader.css";
 export const MainHeader = () => {
 	return (
 		<AppBar position="fixed" className="main-header">
-			<Toolbar>
+			<Toolbar className="toolbar">
 				<Typography variant="h5" noWrap>
 					Object Register
 				</Typography>
 
-				<button className="btn" onClick={handleClearEvents}>
+				<Button
+					variant="contained"
+					color="secondary"
+					onClick={handleClearEvents}
+				>
 					Clear event list
-				</button>
+				</Button>
 			</Toolbar>
 		</AppBar>
 	);

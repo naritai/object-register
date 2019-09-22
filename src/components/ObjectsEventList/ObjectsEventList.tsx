@@ -19,8 +19,8 @@ export const ObjectsEventList = () => {
 			<div id="object-events-element">
 				{showEvents ? (
 					<div>
-						{events.map((event) => {
-							return <EventListItem key={event.id} event={event} />;
+						{events.map((event, id) => {
+							return <EventListItem key={id} event={event} />;
 						})}
 					</div>
 				) : (
