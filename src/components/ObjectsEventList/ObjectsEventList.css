@@ -1,8 +1,6 @@
-.event-register {
-	height: 99vh;
-	margin-left: 1em;
-	padding: 0.5em;
-	flex-grow: 1;
+.paper {
+	height: 100%;
+	width: 100%;
 	overflow: hidden;
 }
 
