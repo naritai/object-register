@@ -9,6 +9,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 Builds the app for production to the `build` folder.<br>
 
+### Example UI
+![example](https://github.com/naritai/object-register/blob/master/example.png)
+
 ### About
 
 This app represents the SPA with injected html5 video tag. There are bunch of rectangles moving over the video when it plays. When the video stops they disappear. Click on any rectangle register to
