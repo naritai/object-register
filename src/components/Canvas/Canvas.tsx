@@ -6,12 +6,7 @@ import { canvasHeight, canvasWidth, svgFieldId } from "./params";
 import "./Canvas.css";
 
 export class Canvas extends React.Component {
-	canvas:
-		| string
-		| ((instance: HTMLDivElement | null) => void)
-		| RefObject<HTMLDivElement>
-		| null
-		| undefined;
+	canvas: any;
 
 	constructor(props: any) {
 		super(props);
@@ -19,6 +14,7 @@ export class Canvas extends React.Component {
 	}
 
 	componentDidMount() {
+		// actually, we can move that data above (to the parent component)
 		const myCanvas = createCnavas({
 			width: String(canvasWidth),
 			height: String(canvasHeight),
@@ -26,8 +22,11 @@ export class Canvas extends React.Component {
 			id: svgFieldId
 		});
 
-		// @ts-ignore: Unreachable code error
 		this.canvas.current.appendChild(myCanvas);
+	}
+
+	componentDidUpdate() {
+		console.log("updated!!!");
 	}
 
 	render() {
@@ -41,6 +40,32 @@ export class Canvas extends React.Component {
 		);
 	}
 }
+
+// TODO: there is a small bug (canvas stretched down heavily)
+// export const Canvas = () => {
+// 	const canvas = useRef(null);
+
+// 	useEffect(() => {
+// 		const myCanvas = createCnavas({
+// 			width: String(canvasWidth),
+// 			height: String(canvasHeight),
+// 			fill: "none",
+// 			id: svgFieldId
+// 		});
+
+// 		// @ts-ignore
+// 		canvas.current.appendChild(myCanvas);
+// 	});
+
+// 	return (
+// 		<div
+// 			className="canvas-wrapper"
+// 			id="canvas-wrapper"
+// 			onClick={handleClick}
+// 			ref={canvas}
+// 		></div>
+// 	);
+// };
 
 const createCnavas = (options: any) => {
 	const svg1 = document.createElementNS("http://www.w3.org/2000/svg", "svg");
